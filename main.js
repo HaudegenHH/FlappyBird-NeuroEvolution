@@ -12,6 +12,7 @@ const TOTAL = 250 // total population
 let birds = []
 let savedBirds = []
 let pipes = []
+let generation = 1
 
 let frameCount = 0
 
@@ -64,7 +65,14 @@ function animate(){
 
   if(birds.length == 0){
     nextGeneration()
+    pipes = []
+    pipes.push(new Pipe())
+    generation++
   }
+
+  ctx.font = '30px serif';
+  ctx.fillText("Generation: " + generation,20,20)
+
 
 	if(frameCount % 150 === 0){
   	pipes.push(new Pipe())

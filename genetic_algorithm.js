@@ -83,8 +83,11 @@ function poolSelection(birds) {
   // Go back one
   index -= 1;
 
-  // Make sure it's a copy! (which includes mutation)
-  return birds[index].copy();
+  let bird = birds[index]
+  let child = new Bird(bird.brain)
+  child.mutate()
+  
+  return child;
 }
 
 
